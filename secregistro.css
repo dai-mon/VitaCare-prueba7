@@ -1,0 +1,190 @@
+/* Diseño de fondo */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #26648b, #3333ad); /* Fondo minimalista */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column; /* Se asegura que el contenido se apile verticalmente */
+    text-align: center; /* Centra el texto */
+}
+
+/* Contenedor principal */
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh; /* Asegura que ocupe todo el alto de la ventana */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+/* Animación de aparición del título */
+@keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Título Registro de CURPs */
+h1.title {
+    color: #fff;
+    font-size: 40px; /* Reduje el tamaño del título */
+    margin-bottom: 30px; /* Menor espacio entre el título y el formulario */
+    animation: fadeInTitle 2s ease-out; /* Animación suave de aparición */
+}
+
+/* Estilo de los campos de formulario */
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reducción del espacio entre los campos */
+    width: 80%;
+    max-width: 300px; /* Reducción del tamaño del formulario */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco suave */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: floatAnimation 2s ease-in-out infinite; /* Animación flotante */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro de los inputs */
+}
+/* Animación de flotación */
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Estilo de los inputs */
+#registerForm input {
+    width: 65%; /* Ajusta el tamaño de los inputs */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Reducir tamaño de la fuente */
+    box-sizing: border-box;
+}
+
+
+
+/* Estilo del botón */
+#registerButton {
+    width: 50%;
+    padding: 12px; /* Reducción del tamaño del botón */
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Reducción del tamaño de la fuente */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#registerButton:hover {
+    background-color: #457b9d;
+}
+
+/* Estilo del mensaje emergente */
+#messageBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e63946; /* Azul */
+    color: white;
+    padding: 15px 15px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animación de suavizado */
+    display: none;
+}
+
+#messageBox.visible {
+    opacity: 1; /* Aparece gradualmente */
+    display: block;
+    transform: translate(-50%, -50%) scale(1.1); /* Leve zoom al aparecer */
+}
+
+#messageBox.visible.hidden {
+    opacity: 0; /* Se desvanece gradualmente */
+    transform: translate(-50%, -50%) scale(0.9); /* Leve contracción al desaparecer */
+}
+
+/* Estilo del botón Volver al Login */
+.back-button {
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e63241;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #26648b;
+}
+
+/* Responsive Ajustes */
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    #registerForm {
+        padding: 15px;
+        max-width: 80%; /* Reducción del tamaño del formulario */
+    }
+
+    #registerButton {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    #registerForm input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .back-button {
+        font-size: 14px;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #registerForm {
+        padding: 10px;
+        max-width: 95%; /* Mayor flexibilidad en móviles */
+    }
+
+    #registerButton {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #registerForm input {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .back-button {
+        font-size: 12px;
+    }
+}

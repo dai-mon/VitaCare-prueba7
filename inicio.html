@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaCare App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="sec.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- App Header -->
+    <header id="appHeader" class="app-header">
+        <a href="inicio.html">
+            <img src="Vitacare.png" alt="VitaCare Logo" class="logo">
+        </a>    
+        <h1>VitaCare</h1>
+        <div class="actions">
+            <button id="notificationBtn"><i class="fas fa-bell"></i></button>
+            <button><i class="fas fa-user"></i></button>
+        </div>    
+    </header>
+
+    <!--mood section-->
+    <section id="moodSection" class="section active">
+        <div class="card">
+            <h2>¿Cómo te sientes hoy?</h2>
+            <div class="mood-tracker">
+                <div class="mood-card" data-mood="😊 Bien">😊 Bien</div>
+                <div class="mood-card" data-mood="😐 Regular">😐 Regular</div>
+                <div class="mood-card" data-mood="😔 Mal">😔 Mal</div>
+            </div>
+            <div class="history">
+                <h3>Historial de Estados de Ánimo</h3>
+                <ul id="moodHistory">
+                    <!-- Los registros aparecerán aquí -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   <!-- Diet Section -->
+   <section id="dietSection" class="section">
+    <div class="card">
+        <h2>Control de Glucosa</h2>
+        <div class="form-group">
+            <label for="glucoseLevel">Nivel de Glucosa:</label>
+            <input type="number" id="glucoseLevel" placeholder="Ejemplo: 120 mg/dL">
+        </div>
+        <button id="checkMenu" class="btn">Obtener Recomendaciones</button>
+    </div>
+    <div class="card" id="menuRecommendations">
+        <h3>Menú Recomendado</h3>
+        <p id="menuMessage">Introduce tu nivel de glucosa para ver recomendaciones.</p>
+        <ul id="mealRecommendations">
+            <!-- Recomendaciones de comidas -->
+        </ul>
+    </div>
+</section>
+
+    <!-- Health Section -->
+    <section id="healthSection" class="section">
+        <div class="card">
+            <h2>Recomendaciones de Salud</h2>
+            <div class="form-group">
+                <label for="healthlevel">Nivel de Glucosa</label>
+                <input type="number" id="healthlevel" placeholder="Ejemplo: 120">
+            </div>
+            <button id="checksalud" class="btn">Dar Recomendaciones</button>
+        </div>
+        <div class="card" id="Recomendaciones">
+            <b>
+                <h3>Recomendaciones</h3>
+            </b>
+            <p id="healthMessage" style="font-size: 1.0em;">Introduce tu nivel de glucosa para ver recomendaciones.</p>
+            <ul id="healthRecommendations">
+                <!-- Recomendaciones de salud -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progressSection" class="section">
+        <div class="card">
+            <h2>Progreso</h2>
+            <canvas id="progressChart"></canvas>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="historySection" class="section">
+        <div class="card">
+            <h2>Historial</h2>
+            <ul id="historyList"></ul>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settingsSection" class="section">
+        <div class="card">
+            <h2>Ajustes</h2>
+            <div class="settings-group">
+                <label>Modo Oscuro</label>
+                <input type="checkbox" id="darkModeToggle">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="bottom-nav-item active" data-target="moodSection">
+            <i class="fas fa-smile"></i>
+            Estado
+        </a>
+        <a href="#" class="bottom-nav-item" data-target="dietSection">
+            <i class="fas fa-utensils"></i>
+            Dieta
+        </a>
+        <a href="#" class="bottom-nav-item" data-target="healthSection">
+            <i class="fas fa-heartbeat"></i>
+            Salud
+        </a>
+        <a href="#" class="bottom-nav-item" data-target="progressSection">
+            <i class="fas fa-chart-line"></i>
+            Progreso
+        </a>
+        <a href="#" class="bottom-nav-item" data-target="historySection">
+            <i class="fas fa-history"></i>
+            Historial
+        </a>
+        <a href="#" class="bottom-nav-item" data-target="settingsSection">
+            <i class="fas fa-cog"></i>
+            Ajustes
+        </a>
+    </nav>
+    </div>
+
+    <script src="sec.js"></script>
+
+</body>
+
+</html>

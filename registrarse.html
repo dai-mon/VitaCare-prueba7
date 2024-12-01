@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de CURPs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="secregistro.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- App Header -->
+    <div class="app-container">
+        <!-- Título Registro de CURPs -->
+        <h1 class="title">Registrarse</h1>
+
+        <form id="registerForm">
+            <input type="text" id="nameInput" placeholder="Nombre Completo" required>
+            <input type="email" id="emailInput" placeholder="Correo Electrónico" required>
+            <input type="password" id="passwordInput" placeholder="Contraseña" required>
+            <input type="password" id="confirmPasswordInput" placeholder="Confirmar Contraseña" required>
+            <button type="submit" id="registerButton">Registrarse</button>
+        </form>
+        
+        <div id="messageBox" class="hidden"></div>
+
+        <!-- Botón para regresar al inicio de login -->
+        <a href="index.html" class="back-button">Volver al Login</a>
+        
+    <script src="seclogin.js"></script>
+</body>
+</html>
